@@ -35,7 +35,7 @@ const rows = [
 export default function Footer() {
     return (
         <main className="border-t border-b w-[90%] h-[70vh] flex text-[1rem]">
-            <ul className="flex w-full justify-evenly items-center">
+            <ul className="flex-wrap flex w-full justify-evenly items-center">
                 {columns.map((column: string, index: number) => (
                     <li key={index} className=" text-left">
                         <h2 className="font-bold">

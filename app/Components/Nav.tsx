@@ -1,19 +1,28 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react"
 
 const links = [
     {
         picture: 'https://www.svgrepo.com/show/530571/conversation.svg',
-        Text: 'BUY'
+        Text: 'BUY',
+        href: '/Buy'
     },
     {
         picture: 'https://www.svgrepo.com/show/527243/money-bag.svg',
-        Text: 'SELL'
+        Text: 'SELL',
+        href: '/Sell'
     },
     {
         picture: 'https://www.svgrepo.com/show/530571/conversation.svg',
-        Text: 'LOGIN/RESEARCH'
+        Text: 'LOGIN',
+        href: '/Login'
+    },
+    {
+        picture: 'https://www.svgrepo.com/show/27703/customer-service.svg',
+        Text: 'CONTACT',
+        href: '/Contact'
     },
 ]
 
@@ -42,9 +51,12 @@ export default function Nav() {
             <ul className="flex w-[50%] h-full items-center justify-evenly">
                 {links.map((link:any, index:number) => (
                     <li key={index} className="flex h-[3rem] w-[12rem] items-center justify-evenly w-[100%] hover:cursor-pointer border-b-2 hover:border-blue-600 rounded-b">
-                        <h2>
-                            {link.Text}
-                        </h2>
+                        <Link href={link.href}>
+                            <h2>
+                                {link.Text}
+                            </h2>
+                        </Link>
+
                     </li>
                 ))}
             </ul>
