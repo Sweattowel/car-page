@@ -1,7 +1,6 @@
-import Image from "next/image";
-import Brochure from "../components/Brochure.js";
-import Nav from "../components/Nav.js";
-import Footer from "../components/Footer.js";
+import Brochure from "../app/components/Brochure.tsx";
+import Nav from "../app/components/Nav.tsx";
+import Footer from "../app/components/Footer.tsx"
 
 export default function Home() {
   return (
