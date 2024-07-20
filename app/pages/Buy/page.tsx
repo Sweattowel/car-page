@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 export default function About() {
   return (
-    <main className="flex min-h-[200vh] flex-col min-w-[500px]">
+    <main className="flex min-h-[200vh] flex-col min-w-[500px] border">
       <Nav />
       <div className="flex flex-col items-center justify-center h-full">
         <h1 className="text-3xl font-bold">Buy a car</h1>
