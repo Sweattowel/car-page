@@ -1,6 +1,6 @@
-import Brochure from "../app/components/Brochure.tsx";
-import Nav from "../app/components/Nav.tsx";
-import Footer from "../app/components/Footer.tsx"
+import Brochure from "./components/Brochure.tsx";
+import Nav from "./components/Nav.tsx";
+import Footer from "./components/Footer.tsx"
 
 export default function Home() {
   return (

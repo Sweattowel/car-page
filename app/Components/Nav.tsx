@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react"
+import { useState } from 'react';
 
 const links = [
     {
@@ -24,7 +24,8 @@ const links = [
         Text: 'CONTACT',
         href: '/Contact'
     },
-]
+];
+
 
 const notifications = [
     {
@@ -39,31 +40,39 @@ const notifications = [
         level: 2,
         message: 'They hit the pentagon'
     },
-]
-
+];
 
 export default function Nav() {
-    const [seeNotifications, setSeeNotifications] = useState(false)
+    const [seeNotifications, setSeeNotifications] = useState(false);
 
     return (
         <main className="w-full h-[6rem] justify-evenly items-center flex">
-            <img className="h-[6rem]" src="https://www.svgrepo.com/show/25407/car.svg" alt="PageLogo" />
+            <Link href={`/`}>
+                <img className="h-[6rem] hover:scale-110 transition-transform duration-300" src="https://www.svgrepo.com/show/25407/car.svg" alt="PageLogo" />
+            </Link>
             <ul className="flex w-[50%] h-full items-center justify-evenly">
-                {links.map((link:any, index:number) => (
-                    <li key={index} className="flex h-[3rem] w-[12rem] items-center justify-evenly w-[100%] hover:cursor-pointer border-b-2 hover:border-blue-600 rounded-b">
-                        <Link href={link.href}>
-                            <h2>
-                                {link.Text}
-                            </h2>
-                        </Link>
-
-                    </li>
+                {links.map((link, index) => (
+                    <Link
+                        href={`/pages${link.href}`}
+                        key={index}
+                        className="flex h-[3rem] w-[12rem] items-center justify-evenly hover:cursor-pointer border-b-2 hover:border-blue-600 rounded-b"
+                    >
+                        <div  className="flex items-center">
+                            <img src={link.picture} alt={link.Text} className="h-6 w-6 mr-2" />
+                            <h2>{link.Text}</h2>
+                        </div>
+                    </Link>
                 ))}
             </ul>
             <section>
-                <img onClick={() => setSeeNotifications(!seeNotifications)} className="h-[3rem] hover:cursor-pointer border-b-2 hover:border-blue-600 rounded-b" src="https://www.svgrepo.com/show/532089/bell-alt.svg" alt="bellIcon" />
+                <img
+                    onClick={() => setSeeNotifications(!seeNotifications)}
+                    className="h-[3rem] hover:cursor-pointer hover:scale-110 transition-transform duration-300 border-b-2 hover:border-blue-600 rounded-b"
+                    src="https://www.svgrepo.com/show/532089/bell-alt.svg"
+                    alt="bellIcon"
+                />
                 <ul className={`${!seeNotifications ? `opacity-0` : 'opacity-100'} mt-8 flex flex-col justify-spaced-apart fixed right-10 bg-white z-10 mt-1 divide-y shadow-inner transition-opacity fade-out duration-2000`}>
-                    {notifications.map((notification: any, index:number ) => (
+                    {notifications.map((notification, index) => (
                         <div key={index} className="p-6">
                             {notification.level === 3 ? "!!! " : notification.level === 2 ? "!!  " : "!   "}{notification.message}
                         </div>
@@ -71,6 +80,5 @@ export default function Nav() {
                 </ul>
             </section>
         </main>
-    )
+    );
 }
-
