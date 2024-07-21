@@ -2,9 +2,9 @@
     {
         "name": "2021 Honda CR-V",
         "transmission": "Manual",
-        "prior": 1,
-        "price": "29.990",
-        "mileage": 85.000,
+        "condition": "Used",
+        "price": "29990",
+        "mileage": 85000,
         "images": [
             "https://carsales.pxcrush.net/car/cil/wrmniuvn7v4o6djcw5k5ozih2.jpg?pxc_method=gravityfill&pxc_bgtype=self",
             "https://imgd.aeplcdn.com/370x208/n/cw/ec/130591/fronx-exterior-right-front-three-quarter-109.jpeg?isig=0&q=80",
@@ -17,9 +17,9 @@
     {
         "name": "2023 Toyota RAV4",
         "transmission": "Automatic",
-        "prior": 2,
-        "price": "38.500",
-        "mileage": 20.000,
+        "condition": "Used",
+        "price": "38500",
+        "mileage": 20000,
         "images": [
             "https://carsales.pxcrush.net/car/cil/wrmniuvn7v4o6djcw5k5ozih2.jpg?pxc_method=gravityfill&pxc_bgtype=self",
             "https://imgd.aeplcdn.com/370x208/n/cw/ec/130591/fronx-exterior-right-front-three-quarter-109.jpeg?isig=0&q=80",
@@ -32,9 +32,9 @@
     {
         "name": "2020 Ford Escape",
         "transmission": "Automatic",
-        "prior": 0,
-        "price": "27.200",
-        "mileage": 60.000,
+        "condition": "New",
+        "price": "27200",
+        "mileage": 60000,
         "images": [
             "https://carsales.pxcrush.net/car/cil/wrmniuvn7v4o6djcw5k5ozih2.jpg?pxc_method=gravityfill&pxc_bgtype=self",
             "https://imgd.aeplcdn.com/370x208/n/cw/ec/130591/fronx-exterior-right-front-three-quarter-109.jpeg?isig=0&q=80",
@@ -47,9 +47,9 @@
     {
         "name": "2021 Subaru Forester",
         "transmission": "CVT",
-        "prior": 3,
-        "price": "32.400",
-        "mileage": 30.000,
+        "condition": "Used",
+        "price": "32400",
+        "mileage": 30000,
         "images": [
             "https://carsales.pxcrush.net/car/cil/wrmniuvn7v4o6djcw5k5ozih2.jpg?pxc_method=gravityfill&pxc_bgtype=self",
             "https://imgd.aeplcdn.com/370x208/n/cw/ec/130591/fronx-exterior-right-front-three-quarter-109.jpeg?isig=0&q=80",
