@@ -48,6 +48,7 @@ const ImageDisplay = ({ imageUrls }: ImageDisplayProps) => {
           >
           {buttons.map((button: number, index: number) => (
             <button 
+              key={index}
               onClick={() => {setCurrImage(index)}}
             >
               <div className={`${currImage === index ? "bg-black" : "bg-white"} border-white border m-auto w-2 h-2  rounded-full  ml-1 mr-1`}></div>

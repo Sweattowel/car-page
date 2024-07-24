@@ -35,10 +35,7 @@ export default function About() {
     setFilters(updatedFilters);
   }
 
-  useEffect(() => {
-    console.log(filters);
-    applyFilters();
-  }, [filters]);
+
 
   function applyFilters() {
     let data = DummyData;
@@ -51,13 +48,21 @@ export default function About() {
       } else if (filter.type === "Condition") {
         data = data.filter(d => d.condition === filter.filter);
       } else if (filter.type === "Price") {
-        data = data.filter(d => parseInt(d.price) >= parseInt(filter.filter));
+        data = data.filter(d => 
+          (parseInt(d.price) <= parseInt(filter.filter)) && 
+          (parseInt(d.price) >= parseInt(filter.filter) - (parseInt(filter.filter) === 20000 ? 20000 : 5000)));
       }
     });
 
     setFilteredData(data);
   }
 
+  
+  useEffect(() => {
+    console.log(filters);
+    applyFilters();
+  }, [filters]);
+  
   return (
     <main className="flex min-h-[200vh] flex-col min-w-[500px] border">
       <Nav />
