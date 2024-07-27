@@ -45,9 +45,9 @@ export default function Contact() {
     <main className="flex min-h-screen flex-col items-center min-w-[500px]">
       <Nav />
       <div className="flex flex-col items-center justify-center h-full">
-        <h1 className="text-3xl font-bold">Sell a car</h1>
+        <h1 className="text-3xl font-bold m-[2rem] p-2 rounded-lg w-[90vw] bg-gray-600 text-center text-white">Sell a car</h1>
         <AdPackage />
-        <h2 className="font-bold texl-xl m-8 text-2xl">
+        <h2 className="text-3xl font-bold m-[2rem] p-2 rounded-lg w-[90vw] bg-gray-600 text-center text-white">
           Create Your AD here!
         </h2>        
         <section
@@ -58,8 +58,9 @@ export default function Contact() {
           >
             {buttonOptions.map((button: any, index: number) => (
               <button
+                key={index}
                 onClick={() => {
-                  setSeeDropdown(true)
+                  setSeeDropdown(!seeDropdown)
                   setDropDownSetting(button.choiceName)
 
                 }}

@@ -5,6 +5,8 @@ import Footer from "../../components/Footer";
 import DummyData from "../../DummyData/DummyData.json";
 import ImageDisplay from "./components/ImageDisplay";
 import { useEffect, useState } from "react";
+import Dot from "./components/Dot";
+import Link from "next/link";
 
 interface FilterStructure {
   type: string;
@@ -67,7 +69,7 @@ export default function About() {
     <main className="flex min-h-[200vh] flex-col min-w-[500px] border">
       <Nav />
       <div className="flex flex-col items-center justify-center h-full">
-        <h1 className="text-3xl font-bold m-[2rem]">Buy a car</h1>
+        <h1 className="text-3xl font-bold m-[2rem] p-2 rounded-lg w-[90vw] bg-gray-600 text-center text-white">Buy a car</h1>
         <section className="flex flex-row">
           <div className="w-[15vw] h-[100vh] absolute">
             <h2 className="text-center text-2xl font-bold">Filters</h2>
@@ -113,17 +115,26 @@ export default function About() {
             {filteredData.map((data: any, index: number) => (
               <div key={index} className="w-[50vw] md:w-[450px] h-[50vh] border flex flex-col rounded-xl shadow-lg">
                 <ImageDisplay imageUrls={data.images} />
-                <h2 className="h-[10%] items-center flex m-auto text-2xl">
-                  {data.name}
-                </h2>
-                <div className="flex flex-col h-[20%] border-t text-center items-center text-l">
-                  <div className="flex justify-evenly items-center h-full">
-                    {data.mileage} <div className="m-auto w-1 h-1 rounded-full bg-blue-600 ml-1 mr-1"></div> {data.transmission} <div className="m-auto w-1 h-1 rounded-full bg-blue-600 ml-1 mr-1"></div> {data.condition}
+                <section className="h-[40%] flex flex-col justify-evenly">
+                  <h2 className="w-full justify-center items-center flex text-2xl">
+                    {data.name}
+                  </h2>
+                  <div className="flex flex-col text-center items-center justify-center text-l">
+                    <div className="flex justify-evenly items-center h-full w-[80%]">
+                      {data.mileage}-KMS <Dot /> {data.transmission} <Dot /> {data.condition}
+                    </div>
                   </div>
-                </div>
-                <p className="w-full text-center text-2xl">
-                  From just ${data.price}
-                </p>
+                  <p className="w-full text-center text-2xl">
+                    From just ${data.price}
+                  </p>                
+                  <Link
+                    href={"/"}  
+                    className="w-full text-center font-bold text-2xl hover:scale-[1.1] hover:opacity-60"
+                  >
+                    Buy Now!
+                  </Link>  
+                </section>
+                
               </div>
             ))}
           </ul>

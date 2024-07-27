@@ -67,7 +67,7 @@ export default function Nav() {
             <section>
                 <img
                     onClick={() => setSeeNotifications(!seeNotifications)}
-                    className="h-[3rem] hover:cursor-pointer hover:scale-110 transition-transform duration-300 border-b-2 hover:border-blue-600 rounded-b"
+                    className={`${notifications.length > 0 && !seeNotifications && "animate-pulse"} h-[3rem] hover:cursor-pointer hover:scale-110 transition-transform duration-300 border-b-2 hover:border-blue-600 rounded-b`}
                     src="https://www.svgrepo.com/show/532089/bell-alt.svg"
                     alt="bellIcon"
                 />

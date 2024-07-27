@@ -48,31 +48,30 @@ const packageOptions = [
 export default function AdPackage() {
     return (
         <main>
-            <h2>AD PACKAGE</h2>
             <ul className="flex flex-col w-[80vw] h-[50vh] divide-y justify-evenly items-center">
                 <section className="text-center items-center justify-evenly h-full w-full divide-x flex">
                     <div
-                        className="w-[20%] h-full text-center flex justify-center items-center font-bold text-xl"
+                        className="bg-gray-600 text-white rounded-tl-xl w-[20%] h-full text-center flex justify-center items-center font-bold text-xl"
                     >
                         Tier
                     </div>
                     <div
-                        className="w-[20%] h-full text-center flex justify-center items-center font-bold text-xl"
+                        className="bg-gray-600 text-white w-[20%] h-full text-center flex justify-center items-center font-bold text-xl"
                     >
                         Price
                     </div>
                     <div
-                        className="w-[20%] h-full text-center flex justify-center items-center font-bold text-xl"
+                        className="bg-gray-600 text-white w-[20%] h-full text-center flex justify-center items-center font-bold text-xl"
                     >
                         Front page?
                     </div>
                     <div
-                        className="w-[20%] h-full text-center flex justify-center items-center font-bold text-xl"
+                        className="bg-gray-600 text-white w-[20%] h-full text-center flex justify-center items-center font-bold text-xl"
                     >
                         Free Advertising
                     </div>
                     <div
-                        className="w-[20%] h-full text-center flex justify-center items-center font-bold text-xl"
+                        className="bg-gray-600 text-white rounded-tr-xl w-[20%] h-full text-center flex justify-center items-center font-bold text-xl"
                     >
                         Free Assistance
                     </div>
