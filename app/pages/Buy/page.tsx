@@ -12,7 +12,15 @@ interface FilterStructure {
   type: string;
   filter: string;
 }
-
+interface CarDetails {
+  id: number,
+  name: string,
+  transmission: string
+  condition: string,
+  price: string,
+  mileage: number,
+  images: string[]
+}
 const filterConstraints = [
   { type: "Mileage", options: ["Maximum Mileage"], filterType: 2 },
   { type: "Transmission", options: ['Automatic', 'Manual', 'CVT'], filterType: 0 },
@@ -112,9 +120,14 @@ export default function About() {
             </button>
           </div>
           <ul className="flex flex-wrap justify-evenly w-[80vw] ml-[15vw]  h-[120vh]">
-            {filteredData.map((data: any, index: number) => (
+            {filteredData.map((data: CarDetails, index: number) => (
               <div key={index} className="w-[50vw] md:w-[450px] h-[50vh] border flex flex-col rounded-xl shadow-lg">
-                <ImageDisplay imageUrls={data.images} />
+                <div
+                  className="h-[50%]"
+                >
+                  <ImageDisplay imageUrls={data.images} />  
+                </div>
+                
                 <section className="h-[40%] flex flex-col justify-evenly">
                   <h2 className="w-full justify-center items-center flex text-2xl">
                     {data.name}
@@ -128,8 +141,8 @@ export default function About() {
                     From just ${data.price}
                   </p>                
                   <Link
-                    href={"/"}  
-                    className="w-full text-center font-bold text-2xl hover:scale-[1.1] hover:opacity-60"
+                    href={`/pages/Purchase?carID=${data.id}`}  
+                    className="w-[80%] flex justify-center ml-auto mr-auto text-center font-bold text-2xl hover:scale-[1.1] hover:opacity-60"
                   >
                     Buy Now!
                   </Link>  

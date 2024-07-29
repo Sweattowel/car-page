@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "name": "2021 Honda CR-V",
         "transmission": "Manual",
         "condition": "Used",
@@ -15,6 +16,7 @@
         ]
     },
     {
+        "id": 2,
         "name": "2023 Toyota RAV4",
         "transmission": "Automatic",
         "condition": "Used",
@@ -30,6 +32,7 @@
         ]
     },
     {
+        "id": 3,
         "name": "2020 Ford Escape",
         "transmission": "Automatic",
         "condition": "New",
@@ -45,6 +48,7 @@
         ]
     },
     {
+        "id": 4,
         "name": "2021 Subaru Forester",
         "transmission": "CVT",
         "condition": "Used",

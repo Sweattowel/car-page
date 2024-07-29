@@ -29,29 +29,39 @@ export default function Contact() {
     <main className="flex min-h-screen flex-col items-center min-w-[500px]">
       <Nav />
       <div className="flex flex-col items-center justify-center h-full">
-        <h1 className="text-3xl font-bold">Contact Us</h1>
+        <h1 className="text-3xl font-bold border-b p-6">Contact Us</h1>
         <section 
-          className="w-[90vw] h-[70vh] flex flex-col justify-evenly items-center"
+          className="w-[90vw] h-[120vh] flex flex-col justify-evenly items-center"
         > 
-        <div className="w-full h-[25vh] flex flex-col justify-evenly items-center">
-          <h2 
-            className="font-bold text-xl"
+          <div className="w-full h-[25vh] flex flex-row justify-evenly items-center">
+            <img 
+              className="absolute w-[50vw] max-h-[50vh] z-[-1] rounded"
+              src="https://t3.ftcdn.net/jpg/04/30/03/78/360_F_430037889_ZphBdATDFYJRJinswvhplR8BTFR1I8Wi.jpg" 
+              alt="Man in suit" 
+            />
+          <div 
+            className="w-[25%] bg-white z-1 h-[30vh] rounded-xl shadow-2xl absolute left-[20%] p-4 border flex flex-col justify-evenly items-center"
           >
-            Our Social media accounts
-          </h2>          
-          {socialMedia.map((media: any, index: number) => (
-            <div
-              className="flex m-auto min-w-[25%]"
-              key={index}
+            <h2 
+              className="font-bold text-xl"
             >
-              <img className="w-[3rem]" src={media.source} alt={media.title}/>
-              <h3
-                className="text-center font-bold flex items-center justify-center w-full"
+              Our Social media accounts
+            </h2>          
+            {socialMedia.map((media: any, index: number) => (
+              <div
+                className="flex m-auto w-[70%]"
+                key={index}
               >
-                {media.title}
-              </h3>
+                <img className="w-[3rem]" src={media.source} alt={media.title}/>
+                <h3
+                  className="text-center font-bold flex items-center justify-center w-full"
+                >
+                  {media.title}
+                </h3>
             </div>
-          ))}
+            ))}            
+          </div>
+
         </div>
         <div>
           <h2

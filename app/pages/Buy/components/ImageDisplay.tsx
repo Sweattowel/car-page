@@ -17,7 +17,7 @@ const ImageDisplay = ({ imageUrls }: ImageDisplayProps) => {
     }
   
     return (
-      <div className="relative w-full h-64 overflow-hidden">
+      <div className="relative w-full h-full overflow-hidden">
         <div
           className="absolute flex transition-transform duration-1000"
           style={{ transform: `translateX(-${currImage * 100}%)` }}

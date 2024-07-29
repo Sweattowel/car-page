@@ -48,7 +48,7 @@ const packageOptions = [
 export default function AdPackage() {
     return (
         <main>
-            <ul className="flex flex-col w-[80vw] h-[50vh] divide-y justify-evenly items-center">
+            <ul className="shadow-xl flex flex-col mt-8 w-[80vw] h-[50vh] divide-y justify-evenly items-center">
                 <section className="text-center items-center justify-evenly h-full w-full divide-x flex">
                     <div
                         className="bg-gray-600 text-white rounded-tl-xl w-[20%] h-full text-center flex justify-center items-center font-bold text-xl"
@@ -79,7 +79,7 @@ export default function AdPackage() {
                 </section>
                 {packageOptions.map((option: packageOptionStruc, index: number) => (
                     <li
-                        className="text-center items-center justify-evenly h-full w-full divide-x flex"
+                        className="text-center items-center justify-evenly h-full w-full flex bg-white"
                         key={index}
                     >
                         <h2
