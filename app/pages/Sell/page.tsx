@@ -48,7 +48,7 @@ export default function Contact() {
   return (
     <main className="flex min-h-screen flex-col items-center min-w-[500px]">
       <Nav />
-      <div className="flex flex-col items-center justify-center h-full">
+      <div className="flex flex-col items-center justify-evenly h-[150vh] border">
         <h1 className="text-3xl font-bold m-[2rem] p-2 rounded-lg w-[90vw] bg-gray-600 text-center text-white">Sell a car</h1>
         <img 
           className="absolute w-[90vw] rounded top-[10rem] z-[-1]"

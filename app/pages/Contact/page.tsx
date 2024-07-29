@@ -31,11 +31,11 @@ export default function Contact() {
       <div className="flex flex-col items-center justify-center h-full">
         <h1 className="text-3xl font-bold border-b p-6">Contact Us</h1>
         <section 
-          className="w-[90vw] h-[120vh] flex flex-col justify-evenly items-center"
+          className="w-[90vw] h-[100vh] flex flex-col justify-evenly items-center"
         > 
           <div className="w-full h-[25vh] flex flex-row justify-evenly items-center">
             <img 
-              className="absolute w-[50vw] max-h-[50vh] z-[-1] rounded"
+              className="shadow-xl absolute w-[70vw] max-h-[50vh] z-[-1] rounded"
               src="https://t3.ftcdn.net/jpg/04/30/03/78/360_F_430037889_ZphBdATDFYJRJinswvhplR8BTFR1I8Wi.jpg" 
               alt="Man in suit" 
             />
