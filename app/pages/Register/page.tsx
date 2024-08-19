@@ -1,34 +1,26 @@
 "use client"
-
-import Nav from "../../components/Nav";
-import Footer from "../../components/Footer";
+import Footer from "@/app/components/Footer"
+import Nav from "@/app/components/Nav"
 import Link from "next/link";
 import { useState } from "react";
 
-export default function Contact() {
-  const [userName, setUserName] = useState("");
-  const [passWord, setPassWord] = useState("");
-  const [error, setError] = useState("");
-
-  function fakeLogin(){
-    if (!userName || !passWord){
-      setError("Please fill out fields")
+export default function Register(){
+    const [userName, setUserName] = useState("");
+    const [passWord, setPassWord] = useState("");
+    const [error, setError] = useState("");
+  
+    function fakeRegister(){
+      if (!userName || !passWord){
+        setError("Please fill out fields")
+      }
+      sessionStorage.setItem("Registered", `User:${userName}=true?`)
+      setError("Successfully registered")
     }
-    if (sessionStorage.getItem("Registered") != null){
-      sessionStorage.setItem("login", `User:${userName}=true?`)
-      setError("Successfully logged in")
-    } else {
-      setError("No user exists")
-    }
-    
-  }
-
-  return (
-    <main className="flex min-h-screen flex-col items-center min-w-[500px]">
-      <Nav />
-      <div className="flex flex-col items-center justify-center h-full">
-        <section>
-          <h1 className="text-3xl font-bold">Login</h1>
+    return (
+        <main className="flex min-h-screen flex-col items-center min-w-[500px]">
+            <Nav />
+            <section>
+          <h1 className="text-3xl font-bold">Register</h1>
         </section>
         <section
           className="border w-[20vw] h-[60vh] flex flex-col items-center justify-center rounded-lg shadow-2xl m-8"
@@ -67,10 +59,10 @@ export default function Contact() {
             <button
               className="border rounded-xl w-[100px] hover:bg-black hover:text-white"
               onClick={() => 
-                fakeLogin()
+                fakeRegister()
               }
             >
-              LOGIN
+              Register
             </button>
             {error && (
               <p
@@ -80,16 +72,15 @@ export default function Contact() {
               </p>
             )}
             <Link
-              href={"/pages/Register"}
+              href={"/pages/Login"}
               className="text-sm font-bold hover:scale-110"
             >
-              Want to Register?
+              Want to Login?
             </Link>              
           </div>
         
         </section>
-      </div>
-      <Footer />
-    </main>
-  );
+            <Footer />
+        </main>
+    )
 }

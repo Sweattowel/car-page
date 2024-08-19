@@ -2,7 +2,7 @@
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import AdPackage from "./Component/AdPackage";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 /*
   Needs mileage 
   transmission
@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 */
 const tiers = ['Free', 'Bargain price', 'Best Value', 'Premium']
 export default function Contact() {
+  const [canSell, setCanSell] = useState("")
   const [carAdDetails, setCarAdDetails] = useState({
     Tier: "",
     Mileage: 0,
@@ -45,10 +46,18 @@ export default function Contact() {
   useEffect(() => {
     console.log(carAdDetails)
   },[carAdDetails])
+
+  useEffect(() => {
+    let user = sessionStorage.getItem("login")
+    if (user !== null){
+      setCanSell(user)
+    }
+    console.log(user)
+  },[])
   return (
     <main className="flex min-h-screen flex-col items-center min-w-[500px]">
       <Nav />
-      <div className="flex flex-col items-center justify-evenly h-[150vh] border">
+      <div className="flex flex-col items-center justify-evenly h-[150vh]">
         <h1 className="text-3xl font-bold m-[2rem] p-2 rounded-lg w-[90vw] bg-gray-600 text-center text-white">Sell a car</h1>
         <img 
           className="absolute w-[90vw] rounded top-[10rem] z-[-1]"
@@ -56,11 +65,13 @@ export default function Contact() {
           alt="SkyBackground" 
         />
         <AdPackage />
+        {canSell && (
+          <>
         <h2 className="text-3xl font-bold m-[2rem] p-5 rounded-lg w-[90vw] bg-gray-600 text-center text-white">
           Create Your AD here!
         </h2>        
         <section
-          className="border w-[80vw] flex flex-col h-[70vh]"
+          className="border w-[80vw] flex flex-col h-[70vh] shadow-2xl justify-center items-center"
         >
           <ul
             className="flex w-[15rem] p-4"
@@ -103,9 +114,9 @@ export default function Contact() {
               </ul>
             }                      
           </ul>
-          <div className="p-8 flex flex-col border w-[13rem] m-4 divide-y justify-evenly">
+          <div className="p-8 h-[150px] shadow-xl flex flex-col w-[13rem] m-4 justify-evenly">
             <input 
-              className="text-center"
+              className="text-center w-full border rounded h-full m-1 p-1"
               onChange={
                 (e) => setCarAdDetails(prevDetails => ({
                 ...prevDetails,
@@ -115,7 +126,7 @@ export default function Contact() {
               type="number" name="NumberInputMileage" id="Mileage" placeholder="Enter Mileage" 
             />
             <input 
-              className="text-center"
+              className="text-center w-full border rounded h-full m-1 p-1"
               onChange={(e) => setCarAdDetails(prevDetails => ({
                 ...prevDetails,
                 Price: parseInt(e.target.value)
@@ -125,7 +136,10 @@ export default function Contact() {
           </div>
 
 
-        </section>
+        </section>          
+          </>
+        )}
+
         
       </div>
       <Footer />
