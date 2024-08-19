@@ -49,7 +49,13 @@ export default function About() {
 
   function applyFilters() {
     let data = DummyData;
-
+    if (sessionStorage.getItem("CARAD") !== null){
+      let preConvertAdd = sessionStorage.getItem("CARAD")
+      let newAdd: CarDetails = JSON.parse(preConvertAdd!)
+      newAdd.id = data.length + 1
+      data.push(newAdd)
+      console.log(data)
+    }
     filters.forEach(filter => {
       if (filter.type === "Mileage") {
         data = data.filter(d => d.mileage <= parseInt(filter.filter));
@@ -74,12 +80,12 @@ export default function About() {
   }, [filters]);
   
   return (
-    <main className="flex min-h-[200vh] flex-col min-w-[500px] border">
+    <main className="flex h-full flex-col min-w-[500px] border">
       <Nav />
       <div className="flex flex-col items-center justify-center h-full">
         <h1 className="text-3xl font-bold m-[2rem] p-2 rounded-lg w-[90vw] bg-gray-600 text-center text-white">Buy a car</h1>
         <section className="flex flex-row">
-          <div className="w-[15vw] h-[100vh] absolute">
+          <div className="w-[15vw] h-full absolute">
             <h2 className="text-center text-2xl font-bold">Filters</h2>
             <ol className="text-center p-2">
               {filterConstraints.map((constraint: any, index: number) => (
@@ -119,7 +125,7 @@ export default function About() {
               Clear Filters
             </button>
           </div>
-          <ul className="flex flex-wrap justify-evenly w-[80vw] ml-[15vw]  h-[120vh]">
+          <ul className="flex flex-wrap justify-evenly w-[80vw] ml-[15vw]  h-full">
             {filteredData.map((data: CarDetails, index: number) => (
               <div key={index} className="w-[50vw] md:w-[450px] h-[50vh] border flex flex-col rounded-xl shadow-lg">
                 <div
